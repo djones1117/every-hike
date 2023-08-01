@@ -62,6 +62,7 @@ export default function SignUpPage({handleSignUpOrLogin}) {
             console.log(signUp)
 
             navigate('/');
+            handleSignUpOrLogin();
            
         } catch(err){
             console.log(err, 'err in handleSubmit');
