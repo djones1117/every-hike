@@ -2,6 +2,14 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET;
 
+const { v4: uuidv4 } = require('uuid');
+
+const S3 = require('aws-sdk/clients/s3');
+
+const s3 = new S3();
+
+const BUCKET_NAME = process.env.BUCKET_NAME
+
 module.exports = {
   signup,
   login
@@ -9,19 +17,35 @@ module.exports = {
 
 async function signup(req, res) {
 
-  console.log(req.body, req.file, ' req.body', 'req.file')
+  console.log(req.body, req.file, ' req.body', 'req.file');
 
+  if(!req.file) return res.status(400).json({error: "Please submit a Photo"})
 
-  res.json({data: 'signup'})
-//   const user = new User(req.body);
-//   try {
-//     await user.save();
-//     const token = createJWT(user);
-//     res.json({ token });
-//   } catch (err) {
-//     // Probably a duplicate email
-//     res.status(400).json(err);
-//   }
+  const filePath = `everyhike1117/${uuidv4()}-${req.file.originalname}`
+
+  const params = {Bucket: BUCKET_NAME, Key: filePath, Body: req.file.buffer}
+
+  s3.upload(params, async function(err, data){
+      if(err){
+        console.log('===============================')
+        console.log(err, ' <- error from aws, Probably telling you your keys arent correct')
+        console.log('===============================')
+        res.status(400).json({error: 'error from aws, check your terminal'})
+      }
+      req.body.photoUrl = data.Location;
+      const user = new User(req.body);
+      try {
+        await user.save();
+        const token = createJWT(user);
+        res.json({ token });
+      } catch (err) {
+        // Probably a duplicate email
+        res.status(400).json(err);
+      }
+  
+    })
+
+  
 }
 
 async function login(req, res) {
