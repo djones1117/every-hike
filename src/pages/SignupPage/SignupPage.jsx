@@ -50,15 +50,22 @@ export default function SignUpPage({handleSignUpOrLogin}) {
         e.preventDefault();
 
 
+       
+       const formData = new FormData();
 
+       formData.append('photo', selectedFile);
 
+       formData.append('username', state.username);
+       formData.append('email', state.email);
+       formData.append('password', state.password);
+       formData.append('aboutMe', state.aboutMe)
 
 
         
 
 
         try {
-            const signUp = await userService.signup(state)
+            const signUp = await userService.signup(formData)
             console.log(signUp)
 
             navigate('/');
@@ -127,7 +134,7 @@ export default function SignUpPage({handleSignUpOrLogin}) {
                        type="file"
                        name="photo"
                        placeholder="upload image"
-                       
+                       onChange={handleFileInput}
                      />
                    </Form.Field>
                    <Button type="submit" className="btn">
