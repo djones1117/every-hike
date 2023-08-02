@@ -6,10 +6,14 @@ const BASE_URL = '/api/users/';
 function signup(user) {
   return fetch(BASE_URL + 'signup', {
     method: 'POST',
+    // when you're sending a file there should no headers, the browser will detect request, 
+    // and apply the proper headers `multipart/formdata` request enctype
     //headers: new Headers({'Content-Type': 'application/json'}),  // If you are sending a file/photo over
     // what do datatype do you need to change this too?
+    //contents of form you need to send to server
+    //user must be an object in order to jsonify
     body: user
-  })
+  })// the .thens occur when we get a response from the server
   .then(res => {
     if (res.ok) return res.json();
     // Probably a duplicate email

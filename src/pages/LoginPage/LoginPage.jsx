@@ -27,6 +27,7 @@ export default function LoginPage({handleSignUpOrLogin}) {
   })
 const [error, setError] = useState('')
 
+// this function takes a path that was defined in App.js for our routes
 const navigate = useNavigate();
 
 
@@ -34,11 +35,12 @@ async function handleSubmit(e){
   e.preventDefault();
 
 
-try {
+try {   //makes http request to server
   await userService.login(state)
   navigate('/')
   handleSignUpOrLogin();
-
+//handleSignUpOrLogin function comes from app.js as a prop, it gets the token from localstorage
+//and stores the decoded token in the app.js state
 
 } catch(err){
   console.log(err)

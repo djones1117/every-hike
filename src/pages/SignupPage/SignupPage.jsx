@@ -13,8 +13,8 @@ import {
 	Segment,
   } from "semantic-ui-react";
 
-
-
+//this hook can be used to change url we are on 
+//on the client side (react, browser code)
 import { useNavigate } from "react-router-dom";
 
 export default function SignUpPage({handleSignUpOrLogin}) {
@@ -28,11 +28,12 @@ export default function SignUpPage({handleSignUpOrLogin}) {
 
     })
     
-    
+    //this state will handle the file upload "photo"
     const [selectedFile, setSelectedFile] = useState('')
 
     const [error , setError] = useState('');
-
+    // this function just takes a path
+    //the path should match a route defined in the app.js
     const navigate = useNavigate()
 
     function handleChange(e){
@@ -49,12 +50,14 @@ export default function SignUpPage({handleSignUpOrLogin}) {
     async function handleSubmit(e){
         e.preventDefault();
 
-
-       
+      //!!!! WHENEVER YOU SEND A FILE TO THE SERVER
+      //!!!YOU MUST CREATE formdata!
+      //this has to be done because the http request 
+      //will be sent in two parts, the text and the file
        const formData = new FormData();
-
+      //key on req.file would be photo 
        formData.append('photo', selectedFile);
-
+      //req.body formdata
        formData.append('username', state.username);
        formData.append('email', state.email);
        formData.append('password', state.password);
@@ -65,12 +68,15 @@ export default function SignUpPage({handleSignUpOrLogin}) {
 
 
         try {
+          //this code is making the fetch request to the server
+          //it sends our state object
+          //this is calling the signup fetch function defined in our utils/userService
             const signUp = await userService.signup(formData)
             console.log(signUp)
-
+          //navigates user to home page if signup is successful 
             navigate('/');
             handleSignUpOrLogin();
-           
+           //handleSignUpOrLogin comes from app.js
         } catch(err){
             console.log(err, 'err in handleSubmit');
             setError('Check your terminal for your error and chrome console!')

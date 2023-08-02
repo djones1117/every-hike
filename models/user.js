@@ -14,7 +14,8 @@ const userSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-
+//event listener for taking a mongoose doc and making it json
+//res.json(token) has the user inside
 userSchema.set("toJSON", {
   transform: function (doc, ret) {
     // remove the password property when serializing doc to JSON
