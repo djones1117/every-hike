@@ -3,8 +3,9 @@ import "./App.css";
 import { useState } from "react";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SignUpPage from "./pages/SignupPage/SignupPage";
-import FeedPage from "./pages/FeedPage/Feed"
+import FeedPage from "./pages/FeedPage/Feed";
 import userService from "./utils/userService";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 //any component rendered by a route goes in the pages folder
 //client side routing, just for showing or hiding components based on the path
 //in the url
@@ -47,6 +48,10 @@ function App() {
       <Route
         path="/signup"
         element={<SignUpPage handleSignUpOrLogin={handleSignUpOrLogin} />}
+      />
+      <Route
+        path="/:username"
+        element={<ProfilePage />}
       />
     </Routes>
   );

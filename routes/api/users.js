@@ -20,7 +20,7 @@ router.post("/login", usersCtrl.login);
 //api/users/bobo
 //api/users/messi
 
-
+router.get('/:username', usersCtrl.profile);
 /*---------- Protected Routes ----------*/
 
 module.exports = router;
