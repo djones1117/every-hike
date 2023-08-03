@@ -4,7 +4,7 @@ import { Button, Form, Grid, Segment } from "semantic-ui-react";
 
 
 
-export default function AddHikeForm(){
+export default function AddHikeForm({handleAddPost}){
 
 
 const [state, setState] = useState({
@@ -38,6 +38,8 @@ function handleSubmit(e)  {
     formData.append('length', state.length)
     formData.append('location', state.location)
     formData.append('photo', selectedFile)
+
+    handleAddPost(formData)
 }
     
 
