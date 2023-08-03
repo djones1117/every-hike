@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import PageHeader from "../../components/Header/Header";
 import AddHikeForm from "../../components/AddHikeForm/AddHikeForm";
@@ -26,7 +26,7 @@ async function handleAddPost(data) {
     try {
       const responseData = await postsApi.create(data);
       console.log(responseData, " <- response from server in handleAddPost");
-
+      setPosts([responseData.data, ...posts])
 
     } catch (err) {
         console.log(err, "err in handleaddpost feedpage");
@@ -34,6 +34,23 @@ async function handleAddPost(data) {
     }
 
     }
+// 2nd C(R)UD operation 
+async function getPosts(){
+  try {
+const responseFromTheServer = await postsApi.getAll();
+console.log(responseFromTheServer)
+setPosts(responseFromTheServer.posts)
+  } catch(err) {
+    console.log(err, 'err in getposts')
+    setError('error fetching posts, check terminal')
+  }
+}
+
+
+
+useEffect(() => {
+getPosts()
+}, []);
 
     return(
       <Grid centered>
@@ -49,7 +66,7 @@ async function handleAddPost(data) {
         </Grid.Row>
         <Grid.Row>
         <Grid.Column style={{ maxWidth: 450 }}>
-            <HikeGallery />
+            <HikeGallery posts={posts} itemsPerRow={1} isProfile={false} />
             </Grid.Column>
         </Grid.Row>
       </Grid>

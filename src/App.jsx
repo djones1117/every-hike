@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import "./App.css";
 import { useState } from "react";
 import LoginPage from "./pages/LoginPage/LoginPage";
