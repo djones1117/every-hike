@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 export default function PageHeader({user, handleLogout}){
     return(
-<Segment clearing>
+<Segment clearing style={{ backgroundColor: 'grey' }}>
       <Header as="h2" floated="right">
         <Link to="/">
           <Icon name="home" color='green'></Icon>
         </Link>
-        <Link to="" onClick={handleLogout} style={{ color: 'green' }} >
+        <Link to="" onClick={handleLogout} style={{ color: 'lightgreen' }} >
          Logout 
         </Link>
       </Header>

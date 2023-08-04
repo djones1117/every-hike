@@ -30,6 +30,14 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url('https://imgur.com/s12kCUX.jpg'), url('https://imgur.com/rqrk8zW.jpg');
+  background-size: 50% 100%;
+  /* Position the background image on the left side */
+  background-position: left, right;
+  /* This will ensure the background image doesn't repeat */
+  background-repeat: no-repeat;
+
+  
 }
 
 

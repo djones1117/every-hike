@@ -61,11 +61,11 @@ function handleChange(e){
     return (
       <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="green" textAlign="center">
+        <Header as="h2" color='black' textAlign="center">
           <Image src="https://imgur.com/KjeX81S.jpg" /> Login
         </Header>
         <Form autoComplete="off" onSubmit={handleSubmit}>
-          <Segment stacked>
+          <Segment stacked style={{backgroundColor: 'grey'}}>
             <Form.Input
               type="email"
               name="email"
@@ -87,7 +87,7 @@ function handleChange(e){
               Login
             </Button>
           </Segment>
-          <Message>
+          <Message style={{backgroundColor: 'grey'}}>
             Don't have an Account? <Link to="/signup">Sign up</Link>
           </Message>
           {error ? <ErrorMessage error={error} /> : null}
