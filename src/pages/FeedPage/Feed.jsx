@@ -8,12 +8,43 @@ import { Grid } from "semantic-ui-react";
 
 import * as postsApi from "../../utils/postApi";
 
+import * as favoritesApi from "../../utils/favoritesApi"
 
 export default function FeedPage() {
 
 
 const [posts, setPosts] = useState([]);
 const [error, setError] = useState("");
+
+
+//3rd (C)RUD
+
+async function addFavorite(postId){
+  try {
+    const reponse = await favoritesApi.create(postId);
+
+    getPosts();
+
+  } catch(err){
+    setError('error adding fav')
+    console.log(err, 'error')
+  }
+}
+
+async function deleteFavorite(favoriteId){
+  try {
+    const reponse = await favoritesApi.deleteFavorite(favoriteId);
+
+    getPosts();
+
+  } catch(err){
+    setError('error deleting fav')
+    console.log(err, 'error')
+  }
+}
+
+
+
 
 
     //(C)RUD
@@ -66,7 +97,7 @@ getPosts()
         </Grid.Row>
         <Grid.Row>
         <Grid.Column style={{ maxWidth: 450 }}>
-            <HikeGallery posts={posts} itemsPerRow={1} isProfile={true} />
+            <HikeGallery posts={posts} itemsPerRow={1} isProfile={true} addFavorite={addFavorite} deleteFavorite={deleteFavorite} />
             </Grid.Column>
         </Grid.Row>
       </Grid>
