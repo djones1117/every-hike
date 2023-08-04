@@ -66,7 +66,7 @@ getPosts()
         </Grid.Row>
         <Grid.Row>
         <Grid.Column style={{ maxWidth: 450 }}>
-            <HikeGallery posts={posts} itemsPerRow={1} isProfile={false} />
+            <HikeGallery posts={posts} itemsPerRow={1} isProfile={true} />
             </Grid.Column>
         </Grid.Row>
       </Grid>

@@ -60,7 +60,7 @@ getProfile()
       </Grid.Row>
       <Grid.Row centered>
         <Grid.Column style={{ maxWidth: 750 }}>
-          <HikeGallery posts={posts}/>
+          <HikeGallery posts={posts} itemsPerRow={1} isProfile={true}/>
         </Grid.Column>
       </Grid.Row>
     </Grid>

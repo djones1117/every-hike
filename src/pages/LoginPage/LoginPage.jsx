@@ -82,7 +82,7 @@ function handleChange(e){
               required
             />
 
-            <Button type="submit" className="btn">
+            <Button color="green" type="submit" className="btn">
               Login
             </Button>
           </Segment>

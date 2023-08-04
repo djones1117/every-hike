@@ -143,7 +143,7 @@ export default function SignUpPage({handleSignUpOrLogin}) {
                        onChange={handleFileInput}
                      />
                    </Form.Field>
-                   <Button type="submit" className="btn">
+                   <Button color="green" type="submit" className="btn">
                      Signup
                    </Button>
                  </Segment>
