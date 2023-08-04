@@ -11,7 +11,7 @@ const postSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   photoUrl: String,
   difficulty: String,
-  //enum: ["Easy", "Moderate", "Hard"],
+  enum: ["Easy", "Moderate", "Hard"],
   trail: String,
   location: String,
   length: String,

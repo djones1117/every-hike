@@ -75,12 +75,12 @@ export default function ProfilePage({user, handleLogout}) {
   useEffect(() => {
 
 getProfile()
-  }, [])
+  }, [username])
 
   if(loading){
     <>
     <PageHeader handleLogout={handleLogout} user={user}/>
-    <h1>Loading...</h1>
+    <h1>Loading...Please wait</h1>
     </>
   }
 
@@ -93,7 +93,7 @@ getProfile()
       </Grid.Row>
       <Grid.Row>
         <Grid.Column>
-          <AboutMe user={userState}/>
+          <AboutMe user={userState} />
         </Grid.Column>
       </Grid.Row>
       <Grid.Row centered>

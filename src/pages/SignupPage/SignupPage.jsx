@@ -129,7 +129,7 @@ export default function SignUpPage({handleSignUpOrLogin}) {
                      required
                    />
                    <Form.TextArea
-                     label="about me"
+                     label="aboutMe"
                      name="aboutMe"
                      placeholder="Tell us more about yourself..."
                      value={state.aboutMe}
