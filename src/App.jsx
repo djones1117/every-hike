@@ -22,6 +22,12 @@ function App() {
     setUser(userService.getUser());
   }
 
+  function handleLogout(){
+    userService.logout();
+
+    setUser(null)
+  }
+
   if (!user) {
     return (
       <Routes>
@@ -40,7 +46,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<FeedPage user={user}/>} />
+      <Route path="/" element={<FeedPage user={user} handleLogout={handleLogout}/>} />
       <Route
         path="/login"
         element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
@@ -51,7 +57,7 @@ function App() {
       />
       <Route
         path="/:username"
-        element={<ProfilePage user={user}/>}
+        element={<ProfilePage user={user} handleLogout={handleLogout}/>}
       />
     </Routes>
   );

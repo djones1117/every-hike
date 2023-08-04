@@ -9,7 +9,7 @@ import { useParams } from "react-router-dom";
 import userService from "../../utils/userService";
 import * as favoritesApi from "../../utils/favoritesApi"
 
-export default function ProfilePage({user}) {
+export default function ProfilePage({user, handleLogout}) {
    
     const [posts, setPosts] = useState([]);
     const [userState, setUserState] = useState({});
@@ -79,7 +79,7 @@ getProfile()
 
   if(loading){
     <>
-    <PageHeader />
+    <PageHeader handleLogout={handleLogout} user={user}/>
     <h1>Loading...</h1>
     </>
   }
@@ -88,7 +88,7 @@ getProfile()
     <Grid>
       <Grid.Row>
         <Grid.Column>
-          <PageHeader />
+          <PageHeader handleLogout={handleLogout} user={user}/>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>

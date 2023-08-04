@@ -10,7 +10,7 @@ import * as postsApi from "../../utils/postApi";
 
 import * as favoritesApi from "../../utils/favoritesApi"
 
-export default function FeedPage({user}) {
+export default function FeedPage({user, handleLogout}) {
 
 
 const [posts, setPosts] = useState([]);
@@ -87,7 +87,7 @@ getPosts()
       <Grid centered>
         <Grid.Row>
             <Grid.Column>
-                <PageHeader />
+                <PageHeader handleLogout={handleLogout} user={user}/>
                 </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
