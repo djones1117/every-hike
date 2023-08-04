@@ -10,7 +10,7 @@ import * as postsApi from "../../utils/postApi";
 
 import * as favoritesApi from "../../utils/favoritesApi"
 
-export default function FeedPage() {
+export default function FeedPage({user}) {
 
 
 const [posts, setPosts] = useState([]);
@@ -97,7 +97,7 @@ getPosts()
         </Grid.Row>
         <Grid.Row>
         <Grid.Column style={{ maxWidth: 450 }}>
-            <HikeGallery posts={posts} itemsPerRow={1} isProfile={true} addFavorite={addFavorite} deleteFavorite={deleteFavorite} />
+            <HikeGallery posts={posts} itemsPerRow={1} isProfile={true} addFavorite={addFavorite} deleteFavorite={deleteFavorite} user={user}/>
             </Grid.Column>
         </Grid.Row>
       </Grid>

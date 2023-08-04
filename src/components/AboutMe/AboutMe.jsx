@@ -11,7 +11,7 @@ function AboutMe({user}){
         <Segment vertical>
            <h1>{user.username}</h1>
         </Segment>
-        <Segment>
+        <Segment color="green">
            <span> AboutMe: {user.aboutMe}</span>
         </Segment>
           

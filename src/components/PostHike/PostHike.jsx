@@ -1,6 +1,14 @@
 import { Card, Icon, Image } from "semantic-ui-react";
 
-function PostHike({ post, isProfile, addFavorite, deleteFavorite }) {
+function PostHike({ post, isProfile, addFavorite, deleteFavorite, user }) {
+
+    const favoritesIndex = post.favorites.findIndex(favorite => favorite.username === user.username);
+
+    const favoriteColor = favoritesIndex > -1 ? 'green' : 'grey';
+
+
+    const clickHandler = favoritesIndex > -1 ? () => deleteFavorite(post.favorites[favoritesIndex]._id) : () => addFavorite(post._id)
+
   return (
     <Card key={post._id}>
       {isProfile ? null : (
@@ -27,7 +35,7 @@ function PostHike({ post, isProfile, addFavorite, deleteFavorite }) {
         <Card.Description>{post.location}</Card.Description>
       </Card.Content>
       <Card.Content extra textAlign={"right"}>
-        <Icon name={"heart"} size="large" />
+        <Icon name={"heart"} size="large" color={favoriteColor} onClick={clickHandler}/>
         {post.favorites.length} favorites
       </Card.Content>
     </Card>

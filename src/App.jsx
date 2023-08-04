@@ -40,7 +40,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<FeedPage />} />
+      <Route path="/" element={<FeedPage user={user}/>} />
       <Route
         path="/login"
         element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
@@ -51,7 +51,7 @@ function App() {
       />
       <Route
         path="/:username"
-        element={<ProfilePage />}
+        element={<ProfilePage user={user}/>}
       />
     </Routes>
   );
