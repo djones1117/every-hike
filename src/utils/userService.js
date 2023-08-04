@@ -47,9 +47,29 @@ function login(creds) {
   .then(({token}) => tokenService.setToken(token));
 }
 
+function getProfile(username){
+  return fetch(BASE_URL + username, {
+    method: 'GET',
+    headers: {
+			
+			
+			Authorization: "Bearer " + tokenService.getToken() // < this is how we get the token from localstorage and send it to our api request
+			// so the server knows who the request is coming from when the client is trying to make a POST
+		}
+  }).then(responseFromTheServer => {
+		if(responseFromTheServer.ok) return responseFromTheServer.json() 
+
+
+		throw new Error('Something wrong in create getAll posts, check terminal'); 
+		
+	})
+
+}
+
 export default {
   signup, 
   getUser,
   logout,
-  login
+  login,
+  getProfile
 };
