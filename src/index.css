@@ -38,8 +38,8 @@ body {
   background-position: left, right;
   /* This will ensure the background image doesn't repeat */
   background-repeat: no-repeat;
-margin-top: 15px;
-padding-top: 80px;
+  margin-top: 15px;
+  padding-top: 80px;
  
 }
 

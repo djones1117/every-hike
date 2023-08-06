@@ -3,8 +3,8 @@ const router = express.Router();
 const usersCtrl = require("../../controllers/users");
 
 //require these for file uploads!!!
-const multer = require('multer');
-const upload = multer()
+const multer = require("multer");
+const upload = multer();
 /*---------- Public Routes ----------*/
 
 //HTTP request -> POST /api/users/signup
@@ -13,21 +13,16 @@ const upload = multer()
 //has the file
 //in this scenario, this line of code in  signupPage formData.append('photo', selectedFile);
 
-router.post("/signup", upload.single('photo'), usersCtrl.signup);
+router.post("/signup", upload.single("photo"), usersCtrl.signup);
 router.post("/login", usersCtrl.login);
 //params for the api request coming from the react side
 //api/users/djones
 //api/users/bobo
 //api/users/messi
 
-router.get('/:username', usersCtrl.profile);
+router.get("/:username", usersCtrl.profile);
 /*---------- Protected Routes ----------*/
 
 module.exports = router;
 
-
-
 /*---------- Protected Routes ----------*/
-
-
-
