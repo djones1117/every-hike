@@ -30,14 +30,8 @@ function PostHike({ post, isProfile, addFavorite, deleteFavorite, user }) {
       <Image src={`${post.photoUrl}`} wrapped ui={false} />
       <Card.Content>
         <Card.Description>{post.difficulty}</Card.Description>
-        </Card.Content>
-        <Card.Content>
         <Card.Description>{post.trail}</Card.Description>
-        </Card.Content>
-        <Card.Content>
         <Card.Description>{post.length}</Card.Description>
-        </Card.Content>
-        <Card.Content>
         <Card.Description>{post.location}</Card.Description>
       </Card.Content>
       <Card.Content extra textAlign={"right"}>
