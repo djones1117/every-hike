@@ -1,6 +1,6 @@
 ## Every Hike
 
-This application allows users to share information and photos about hiking trails. Users can share the hikes difficulty, trail-name, location, trail-length, and a photo of the hike. The users posts will display on their profile page. Users can look at other users profile page and interact with their post by creating a favorite or deleting a favorite. 
+This application allows users to share information and photos about hiking trails. Users can share the hikes difficulty, trail-name, location, trail-length, and a photo of the hike. The users posts will display on their profile page. Users can look at other users profile pages and interact with their post by creating a favorite or deleting a favorite. 
 
 ## Login Page
 ![Alt text](<Screenshot 2023-08-06 at 4.41.11 PM.png>)
@@ -13,7 +13,7 @@ This application allows users to share information and photos about hiking trail
 ![Alt text](<Screenshot 2023-08-06 at 4.52.49 PM.png>)
 
 ## Users Profile
-![Alt text](<Screenshot 2023-08-06 at 4.54.32 PM.png>)
+![Alt text](<Screenshot 2023-08-06 at 5.02.33 PM.png>)
 
 ## Technologies used
 MongoDB, Mongoose, Express.js, React, Node.js, AWS S3 Bucket, CSS, Javascript
