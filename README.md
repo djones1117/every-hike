@@ -1,41 +1,33 @@
+## Every Hike
 
-## Setup 
+This application allows users to share information and photos about hiking trails. Users can share the hikes difficulty, trail-name, location, trail-length, and a photo of the hike. The users posts will display on their profile page. Users can look at other users profile page and interact with their post by creating a favorite or deleting a favorite. 
 
-1. Clone the repo
-2. Rename the folder to your Project, you can use the `mv` command like `mv Mern-Vite-Boilerplate yourprojectname`
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+## Login Page
+![Alt text](<Screenshot 2023-08-06 at 4.41.11 PM.png>)
 
 
-#### Setup your git repo
+## Signup Page
+![Alt text](<Screenshot 2023-08-06 at 4.43.48 PM.png>)
 
-1. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-2.  Then follow the directions on github that says ```…or create a new repository on the command line```
+## Users Feed
+![Alt text](<Screenshot 2023-08-06 at 4.52.49 PM.png>)
 
-it should look like this
+## Users Profile
+![Alt text](<Screenshot 2023-08-06 at 4.54.32 PM.png>)
 
-```
-git init
-git add .
-git commit -m "first commit"
-git remote add origin git@git.generalassemb.ly:SEI-CC/test.git // this will be whatever your address will be
-git push -u origin main
-```
+## Technologies used
+MongoDB, Mongoose, Express.js, React, Node.js, AWS S3 Bucket, CSS, Javascript
 
-#### Setup the App
+## Getting Started
 
-```npm install```
+Live App -
 
-*DOTENV*
+Trello - https://trello.com/b/sr68zquv/hiking-app 
 
-`touch .env`
+## Icebox 
 
-add your variables
+ I want to be able to open up an explore page and find hikes through AllTrails api.
 
-```
-DATABASE_URL=mongodb://localhost:27017/testagramV2
-BUCKET_NAME=catcollectorone
-SECRET=mysecretforjwt
-```
+ I want to be able to see a detailed map of the hike that I selected on the explore page.
 
-The app is configured, to use those respective key names for the database, jwt secret and aws bucket, of course you'll have your own values
-# every-hike
+  I want to be able to edit my posts and re enter key information such as the trails location incase I enter it wrong the first time.
