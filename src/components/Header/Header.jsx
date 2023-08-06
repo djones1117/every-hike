@@ -2,9 +2,9 @@ import { Header, Segment, Image, Icon } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
 
-export default function PageHeader({user, handleLogout}){
+export default function PageHeader({user, handleLogout}) {
     return(
-<Segment clearing style={{ backgroundColor: 'grey' }}>
+<Segment clearing className="sticky-header" style={{ backgroundColor: 'grey'}}>
       <Header as="h2" floated="right">
         <Link to="/">
           <Icon name="home" color='green'></Icon>

@@ -13,6 +13,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  overflow: auto;
+ 
 }
 
 a {
@@ -36,8 +38,9 @@ body {
   background-position: left, right;
   /* This will ensure the background image doesn't repeat */
   background-repeat: no-repeat;
-
-  
+margin-top: 15px;
+padding-top: 80px;
+ 
 }
 
 
