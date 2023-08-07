@@ -6,7 +6,7 @@ export default function PageHeader({ user, handleLogout }) {
     <Segment
       clearing
       className="sticky-header"
-      style={{ backgroundColor: "grey" }}
+      style={{ backgroundColor: "grey", display: "flex", justifyContent: "space-between" }}
     >
       <Header as="h2" floated="right">
         <Link to="/">
@@ -32,6 +32,12 @@ export default function PageHeader({ user, handleLogout }) {
         <Link to="/explore" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Icon name="search" color="green"></Icon>
         </Link>
+      </Header>
+      <Header as="h2">
+        <Link to="/">
+          <Icon name="home" color="green"></Icon>
+        </Link>
+
       </Header>
     </Segment>
   );
