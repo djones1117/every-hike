@@ -29,7 +29,7 @@ export default function PageHeader({ user, handleLogout }) {
         </Link>
       </Header>
       <Header as="h2">
-        <Link to="/explore">
+        <Link to="/explore" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Icon name="search" color="green"></Icon>
         </Link>
       </Header>

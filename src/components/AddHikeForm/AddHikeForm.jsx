@@ -92,7 +92,7 @@ export default function AddHikeForm({ handleAddPost }) {
           placeholder="upload image"
           onChange={handleFileInput}
         />
-        <Button type="submit" className="btn" color="green" >
+        <Button type="submit" className="btn" color="green">
           ADD Hike
         </Button>
       </Form>
