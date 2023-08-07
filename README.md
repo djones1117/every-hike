@@ -13,7 +13,7 @@ This application allows users to share information and photos about hiking trail
 ![Alt text](<Screenshot 2023-08-06 at 4.52.49 PM.png>)
 
 ## Users Profile
-![Alt text](<Screenshot 2023-08-06 at 5.02.33 PM.png>)
+![Alt text](<Screenshot 2023-08-07 at 9.17.43 AM.png>)
 
 ## Technologies used
 MongoDB, Mongoose, Express.js, React, Node.js, AWS S3 Bucket, CSS, Javascript

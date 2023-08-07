@@ -35,7 +35,7 @@ function PostHike({ post, isProfile, addFavorite, deleteFavorite, user }) {
         <Card.Description>{post.location}</Card.Description>
       </Card.Content>
       <Card.Content extra textAlign={"right"}>
-        <Icon name={"heart"} size="large" color={favoriteColor} onClick={clickHandler}/>
+        <Icon name={"star"} size="large" color={favoriteColor} onClick={clickHandler}/>
         {post.favorites.length} favorites
       </Card.Content>
     </Card>
