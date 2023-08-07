@@ -63,7 +63,7 @@ function App() {
         path="/:username"
         element={<ProfilePage user={user} handleLogout={handleLogout} />}
       />
-      <Route path="/explore" element={<ExplorePage />} />
+      <Route path="/explore" element={<ExplorePage user={user} handleLogout={handleLogout}/>} />
     </Routes>
   );
 }
