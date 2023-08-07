@@ -83,10 +83,10 @@ export default function FeedPage({ user, handleLogout }) {
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Column style={{ maxWidth: 450 }}>
+        <Grid.Column style={{ maxWidth: 475}}>
           <HikeGallery
             posts={posts}
-            itemsPerRow={1}
+            itemsPerRow={3}
             isProfile={true}
             addFavorite={addFavorite}
             deleteFavorite={deleteFavorite}

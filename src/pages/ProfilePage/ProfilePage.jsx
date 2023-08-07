@@ -80,7 +80,7 @@ export default function ProfilePage({ user, handleLogout }) {
         <Grid.Column style={{ maxWidth: 750 }}>
           <HikeGallery
             posts={posts}
-            itemsPerRow={1}
+            itemsPerRow={4}
             isProfile={true}
             user={user}
             addFavorite={addFavorite}

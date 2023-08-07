@@ -9,7 +9,7 @@ export default function HikeGallery({posts, itemsPerRow, isProfile, addFavorite,
     
     
     return(
-        <Card.Group itemsPerRow={3}>
+        <Card.Group itemsPerRow={itemsPerRow}>
         {postHikes}
         </Card.Group>
     )
