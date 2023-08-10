@@ -33,7 +33,7 @@ function create(req, res) {
       console.log("===========================================");
       console.log(
         err,
-        " err from aws, either your bucket name is wrong or your keys arent correct"
+        " err from aws, either your bucket name is wrong or your keys aren't correct"
       );
       console.log("===========================================");
       res.status(400).json({ error: "Error from aws, check your terminal!" });

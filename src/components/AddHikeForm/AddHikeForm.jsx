@@ -16,19 +16,18 @@ export default function AddHikeForm({ handleAddPost }) {
   }
 
   function handleChange(e) {
-    console.log(e)
+    console.log(e);
     setState({
       ...state,
       [e.target.name]: e.target.value,
     });
   }
 
-  function handleSelectChange(e){
+  function handleSelectChange(e) {
     setState({
       ...state,
       difficulty: e.target.textContent
-
-    })
+    });
   }
 
   function handleSubmit(e) {
@@ -45,7 +44,6 @@ export default function AddHikeForm({ handleAddPost }) {
   return (
     <Segment>
       <Form autoComplete="off" onSubmit={handleSubmit}>
-      
         <Form.Dropdown
           className="form-control"
           name="difficulty"
