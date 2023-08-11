@@ -14,7 +14,7 @@ export default function ExplorePage({handleLogout, user}) {
       </Grid.Row>
       <Grid.Row>
         <Grid.Column style={{ maxWidth: 450 }}>
-          <SearchBar handleLogout={handleLogout} user={user}/>
+          <SearchBar />
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
