@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Input, Button } from "semantic-ui-react";
 
-
+//make sure this doesnt push to main
 
 export default function SearchBar() {
 
