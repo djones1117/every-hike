@@ -1,32 +1,25 @@
 import React, { useState } from "react";
-import { Input, Button } from "semantic-ui-react";
+
 
 //make sure this doesnt push to main
 
-export default function SearchBar() {
+export default function SearchBar({getActivitySearch}) {
+  const [activityFormState, setActivityFormState] = useState('');
 
-    const [searchValue, setSearchValue] = useState("");
+  
+  function handleChange(e) {
+    console.log(e.target.value)
+    setActivityFormState(e.target.value);
+  }
 
-    function handleSearch() {
-        console.log("Search submitted:", searchValue);
-      }
-
-
-    function handleChange(e) {
-        setSearchValue(e.target.value);
-      }
-
-
-
+  function handleSubmit(e){
+    e.preventDefault();
+    getActivitySearch(activityFormState);
+    setActivityFormState('')
+  }
   return (
-    <div>
-    <Input
-      icon="search"
-      placeholder="Search..."
-      value={searchValue}
-      onChange={handleChange}
-    />
-    <Button onClick={handleSearch}>Search</Button>
-  </div>
+    <form onSubmit={handleSubmit}>
+      <input type="text" placeholder="Search Activity" value={activityFormState} onChange={handleChange} name="activity"/>
+    </form>
   );
 }
