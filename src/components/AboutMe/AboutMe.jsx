@@ -1,5 +1,5 @@
 import { Grid, Segment } from "semantic-ui-react";
-
+//see if this pushes
 function AboutMe({ user }) {
   console.log(user, "is user");
   return (
