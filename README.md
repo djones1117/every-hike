@@ -29,7 +29,8 @@ Trello - https://trello.com/b/sr68zquv/hiking-app
 
 ## Future additions use this
 
-```npm run vite-build
+```
+npm run vite-build
 git add .
 git commit -m "prepped for deployment"
 git push origin main ```
