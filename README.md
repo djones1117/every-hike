@@ -27,10 +27,9 @@ Live App - https://every-hike-1117.onrender.com
 
 Trello - https://trello.com/b/sr68zquv/hiking-app 
 
-## Icebox 
+## Future additions use this
 
- I want to be able to open up an explore page and find hikes through AllTrails api.
-
- I want to be able to see a detailed map of the hike that I selected on the explore page.
-
-  I want to be able to edit my posts and re enter key information such as the trails location incase I enter it wrong the first time.
+```npm run vite-build
+git add .
+git commit -m "prepped for deployment"
+git push origin main ```
