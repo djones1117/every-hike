@@ -10,6 +10,9 @@ require("./config/database");
 
 const app = express();
 
+
+app.set('view engine', 'ejs');
+
 const userRouter = require("./routes/api/users")
 const postRouter = require('./routes/api/posts')
 const favoritesRouter = require('./routes/api/favorites')
@@ -28,12 +31,17 @@ app.use("/api/users", userRouter);
 app.use('/api/posts', postRouter);
 app.use('/api', favoritesRouter)
 // "catch all" route
+
+const manifest = require('./dist/manifest.json');
+
+app.use(express.static(path.join(__dirname, "dist")));
+
+// "catch all" route
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.render(path.join(__dirname, 'dist', 'index.ejs'), {manifest});
 });
 
 
-const port = process.env.PORT || 3001;
 
 
 

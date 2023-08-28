@@ -5,7 +5,8 @@
   "type": "commonjs",
   "scripts": {
     "dev": "concurrently 'vite' 'nodemon server.js'",
-    "build": "vite build",
+    "vite-build": "vite build",
+    "build": "npm install",
     "preview": "vite preview"
   },
   "dependencies": {
