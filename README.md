@@ -23,7 +23,7 @@ MongoDB, Mongoose, Express.js, React, Node.js, AWS S3 Bucket, CSS, Javascript
 
 ## Getting Started
 
-Live App -
+Live App - https://every-hike-1117.onrender.com
 
 Trello - https://trello.com/b/sr68zquv/hiking-app 
 
