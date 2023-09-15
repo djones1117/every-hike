@@ -25,7 +25,7 @@ function create(req, res) {
 
   //this is where our file is stored on aws s3
   const filePath = `everyhike1117/posts/${uuidv4()}-${req.file.originalname}`;
-
+// create the object we want tp send to aws
   const params = { Bucket: BUCKET_NAME, Key: filePath, Body: req.file.buffer };
 
   s3.upload(params, async function (err, data) {
@@ -60,6 +60,9 @@ function create(req, res) {
 
 async function index(req, res) {
   try {
+    //this populates the user when you find the posts
+    //so you'll have access to the users information 
+    //when you fetch the posts
     const posts = await Post.find({}).populate("user").exec();
     res.status(200).json({ posts });
   } catch (err) {}

@@ -22,9 +22,9 @@ async function deleteFavorite(req, res) {
       "favorites._id": req.params.id,
       "favorites.username": req.user.username,
     });
-    post.favorites.remove(req.params.id);
-
-    await post.save();
+    post.favorites.remove(req.params.id); //mutating a document
+  // req.params.id is the favorite id
+    await post.save(); //after you mutate a document you must save
     res.json({ data: "favorite removed" });
   } catch (err) {
     res.status(400).json({ err });
