@@ -2,6 +2,12 @@ import tokenService from "./tokenService";
 
 const BASE_URL = "/api/users/";
 
+// this fetch request is making an http POST request to our server
+// POST /api/users/signup
+
+// to run the controller function in our routes//users file
+// router.post("/signup",  usersCtrl.signup);
+
 function signup(user) {
   return (
     fetch(BASE_URL + "signup", {
@@ -47,18 +53,21 @@ function login(creds) {
     })
     .then(({ token }) => tokenService.setToken(token));
 }
-
+// you are logged in so what do you need to send in the headers!
 function getProfile(username) {
-  return fetch(BASE_URL + username, {
+  return fetch(`${BASE_URL} ${username}`, {
     method: "GET",
     headers: {
+      //convention for sneding jwts
+
       Authorization: "Bearer " + tokenService.getToken(), // < this is how we get the token from localstorage and send it to our api request
       // so the server knows who the request is coming from when the client is trying to make a POST
     },
   }).then((responseFromTheServer) => {
-    if (responseFromTheServer.ok) return responseFromTheServer.json();
-
-    throw new Error("Something wrong in create getAll posts, check terminal");
+    if (responseFromTheServer.ok) return responseFromTheServer.json(); // so if everything went well in the response return 
+    	//the parsed json to where we called the function
+    throw new Error("Something wrong in create getAll posts, check terminal");// this will go to the catch block when we call the function in the AddHikeForm
+    // handleSubmit
   });
 }
 

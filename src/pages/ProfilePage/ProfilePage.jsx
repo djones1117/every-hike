@@ -14,14 +14,20 @@ export default function ProfilePage({ user, handleLogout }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+  // grabbing the param from this route
+// <route path="/:username" element={<ProfilePage />} />
   const { username } = useParams();
   console.log(username);
-
+//  EVERY TIME WE UPDTATE STATE here, we will first make http request to the server
+//to try and perform some crud operation.
   async function addFavorite(postId) {
     try {
       const reponse = await favoritesApi.create(postId);
+      //to update state we are just going to refetch the posts, because they will update the 
+      //favorites
 
-      getProfile();
+      getProfile();// this function updates state
+
     } catch (err) {
       setError("error adding fav");
       console.log(err, "error");
@@ -31,8 +37,10 @@ export default function ProfilePage({ user, handleLogout }) {
   async function deleteFavorite(favoriteId) {
     try {
       const reponse = await favoritesApi.deleteFavorite(favoriteId);
+      //to update state we are just going to refetch the posts, because they will be updated
+      //favorites 
+      getProfile();// this function updates state
 
-      getProfile();
     } catch (err) {
       setError("error deleting fav");
       console.log(err, "error");
@@ -40,6 +48,9 @@ export default function ProfilePage({ user, handleLogout }) {
   }
 
   async function getProfile() {
+    //make the api call,
+    //then log the response,
+    //then update the state
     try {
       setLoading(true);
       const response = await userService.getProfile(username);
