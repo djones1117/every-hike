@@ -79,12 +79,16 @@ export default function SignUpPage({ handleSignUpOrLogin }) {
   return (
     <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="black" textAlign="center">
-          <Image src="https://imgur.com/ciEpqIy.jpg" /> Sign Up
-        </Header>
 
         <Form autoComplete="off" onSubmit={handleSubmit}>
           <Segment stacked>
+      <Header
+  as="h2"
+  textAlign="center"
+  style={{ fontWeight: "bold", marginBottom: "1rem" }}
+>
+  Sign Up
+  </Header>
             <Form.Input
               name="username"
               placeholder="username"

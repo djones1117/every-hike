@@ -25,7 +25,7 @@ async function profile(req, res) {
   try {
     //first find the user using the params from the request
     //findOne finds first match, its useful to have unique usernames!!
-    const user = await User.findOne({ username: req.params.username });
+    const user = await User.findOne({ username: req.params.username.trim() });
     // then find all the posts that belong to that user
     if (!user) return res.status(404).json({ error: "User not found" });
 

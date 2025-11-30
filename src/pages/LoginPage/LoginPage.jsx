@@ -51,11 +51,15 @@ export default function LoginPage({ handleSignUpOrLogin }) {
   return (
     <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="black" textAlign="center">
-          <Image src="https://imgur.com/KjeX81S.jpg" /> Login
-        </Header>
         <Form autoComplete="off" onSubmit={handleSubmit}>
           <Segment stacked style={{ backgroundColor: "grey" }}>
+      <Header
+  as="h2"
+  textAlign="center"
+  style={{ fontWeight: "bold", marginBottom: "1rem" }}
+>
+  Login
+</Header>
             <Form.Input
               type="email"
               name="email"
@@ -78,8 +82,11 @@ export default function LoginPage({ handleSignUpOrLogin }) {
             </Button>
           </Segment>
           <Message style={{ backgroundColor: "grey" }}>
-            Don't have an Account? <Link to="/signup">Sign up</Link>
-          </Message>
+  Don't have an Account?{" "}
+  <Link to="/signup" className="auth-link">
+    Sign up
+  </Link>
+</Message>
           {error ? <ErrorMessage error={error} /> : null}
         </Form>
       </Grid.Column>

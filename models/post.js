@@ -1,5 +1,11 @@
 const mongoose = require("mongoose");
 
+const commentsSchema = mongoose.Schema({
+  username: String,
+  userId: {type: mongoose.Schema.Types.ObjectId },
+  text: String,
+})
+
 const favoritesSchema = mongoose.Schema({
   username: String,
   //One user can have many favorites
@@ -16,6 +22,7 @@ const postSchema = new mongoose.Schema({
   location: String,
   length: String,
   favorites: [favoritesSchema],
+  comments: [commentsSchema]
 });
 
 module.exports = mongoose.model("Post", postSchema);

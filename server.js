@@ -16,6 +16,7 @@ app.set('view engine', 'ejs');
 const userRouter = require("./routes/api/users")
 const postRouter = require('./routes/api/posts')
 const favoritesRouter = require('./routes/api/favorites')
+const commentsRouter = require('./routes/api/comments')
 // add in when the app is ready to be deployed
 // app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(logger("dev"));
@@ -29,7 +30,8 @@ app.use(require("./config/auth"));
 // api routes must be before the "catch all" route
 app.use("/api/users", userRouter);
 app.use('/api/posts', postRouter);
-app.use('/api', favoritesRouter)
+app.use('/api/comments', commentsRouter);
+app.use('/api', favoritesRouter);
 // "catch all" route
 
 const manifest = require('./dist/manifest.json');

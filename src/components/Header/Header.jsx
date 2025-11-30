@@ -8,7 +8,8 @@ export default function PageHeader({ user, handleLogout }) {
       className="sticky-header"
       style={{ backgroundColor: "grey", display: "flex", justifyContent: "space-between" }}
     >
-      <Header as="h2" floated="right">
+      <div style={{ marginTop: 24 }}>
+      <Header as="h2">
         <Link to="/">
           <Icon name="home" color="green"></Icon>
         </Link>
@@ -16,7 +17,9 @@ export default function PageHeader({ user, handleLogout }) {
           Logout
         </Link>
       </Header>
-      <Header as="h2" floated="left">
+      </div>
+      <div style={{ marginTop: 15 }}>
+      <Header as="h2">
         <Link to={`/${user?.username}`}>
           <Image
             src={
@@ -28,6 +31,7 @@ export default function PageHeader({ user, handleLogout }) {
           ></Image>
         </Link>
       </Header>
+       </div> 
       <Header as="h2">
         <Link to="/explore" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Icon name="search" color="green"></Icon>

@@ -69,10 +69,7 @@ function App() {
         element={<ExplorePage user={user} handleLogout={handleLogout} />}
       />
 
-      <Route
-        path="/Test"
-        element={<TestPage />}
-      />
+      <Route path="/Test" element={<TestPage />} />
     </Routes>
   );
 }

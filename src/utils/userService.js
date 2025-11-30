@@ -55,7 +55,7 @@ function login(creds) {
 }
 // you are logged in so what do you need to send in the headers!
 function getProfile(username) {
-  return fetch(`${BASE_URL} ${username}`, {
+  return fetch(`${BASE_URL}${username}`, {
     method: "GET",
     headers: {
       //convention for sneding jwts

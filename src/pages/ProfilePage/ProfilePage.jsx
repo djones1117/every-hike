@@ -22,7 +22,7 @@ export default function ProfilePage({ user, handleLogout }) {
 //to try and perform some crud operation.
   async function addFavorite(postId) {
     try {
-      const reponse = await favoritesApi.create(postId);
+      const response = await favoritesApi.create(postId);
       //to update state we are just going to refetch the posts, because they will update the 
       //favorites
 
@@ -36,7 +36,7 @@ export default function ProfilePage({ user, handleLogout }) {
 
   async function deleteFavorite(favoriteId) {
     try {
-      const reponse = await favoritesApi.deleteFavorite(favoriteId);
+      const response = await favoritesApi.deleteFavorite(favoriteId);
       //to update state we are just going to refetch the posts, because they will be updated
       //favorites 
       getProfile();// this function updates state

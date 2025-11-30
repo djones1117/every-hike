@@ -83,3 +83,21 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+/* Push the left avatar header down 15px */
+.sticky-header .ui.left.floated.header {
+  margin-top: 15px !important;
+}
+
+/* Push the right logout/home header down 20px */
+.sticky-header .ui.right.floated.header {
+  margin-top: 20px !important;
+}
+/* Signup link color */
+.auth-link {
+  color: #21ba45; 
+  font-weight: 600;
+}
+
+.auth-link:hover {
+  color: #16ab39;          /* same as .ui.green.button:hover */
+}
